@@ -1,5 +1,5 @@
 import React from 'react';
-import '/C:/Users/USER/weighing-scale-dashboard/src/index.css';
+
 
 export default function Header() {
   return (

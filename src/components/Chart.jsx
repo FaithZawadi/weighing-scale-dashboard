@@ -4,7 +4,7 @@ import {
   BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer,
   PieChart, Pie, Cell, Legend
 } from 'recharts';
-import scaleData from '../data/scales.json'; // ✅ Import JSON
+import scaleData from '../data/scales.json'; 
 
 // Build pie chart data
 const statusData = Object.values(

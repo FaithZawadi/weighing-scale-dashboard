@@ -150,7 +150,7 @@ export default function PublicProcurementPage() {
       <header className="sticky top-0 z-20 bg-white/95 shadow-sm backdrop-blur">
         <div className="mx-auto flex max-w-screen-xl items-center justify-between px-4 py-4">
           <a href="#" className="flex items-center gap-3">
-            <img src={logo} alt="PPRA logo" className="h-10 w-auto" />
+            <img src={logo} alt="PPRA logo" className="h-15 w-auto" />
             
           </a>
 
@@ -198,9 +198,9 @@ export default function PublicProcurementPage() {
           <div className="relative order-1 flex items-center md:order-2">
             <img src={heroCity} alt="City skyline" className="h-full w-full object-cover" />
             <div className="absolute inset-0 flex flex-col justify-center gap-5 bg-black/50 px-6 md:px-12">
-              <h1 className="text-3xl font-bold leading-tight text-white md:text-5xl">
+              <h2 className="text-xl font-bold leading-tight text-white md:text-4xl">
                 Your Gateway to<br />Transparent Public Procurement
-              </h1>
+              </h2>
               <PrimaryButton text="Explore PPRA" />
             </div>
           </div>

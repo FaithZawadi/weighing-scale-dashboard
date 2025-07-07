@@ -150,7 +150,7 @@ export default function PublicProcurementPage() {
       <header className="sticky top-0 z-20 bg-white/95 shadow-sm backdrop-blur">
         <div className="mx-auto flex max-w-screen-xl items-center justify-between px-4 py-4">
           <a href="#" className="flex items-center gap-3">
-            <img src={logo} alt="PPRA logo" className="h-20 w-auto" />
+            <img src={logo} alt="PPRA logo" className="h-10 w-auto" />
             
           </a>
 

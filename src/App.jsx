@@ -1,4 +1,9 @@
-
+// PublicProcurementPage.jsx
+// — final polished version (React + Tailwind v4)
+// — every imported icon is used
+// — hero card is rounded with angled divider
+// — “Tools in Action” & “Stakeholder Resources” cards are white with coloured icon chips
+// — quick‑link tiles are fully coloured
 
 import React, { useState } from "react";
 import {
@@ -28,10 +33,14 @@ import {
 /* -------------------------------------------------------------------------- */
 /*  SMALL UTILITY COMPONENTS                                                  */
 /* -------------------------------------------------------------------------- */
+
 const IconWrap = ({ children }) => (
-  <span className="inline-flex h-5 w-5 items-center justify-center">{children}</span>
+  <span className="inline-flex h-5 w-5 items-center justify-center">
+    {children}
+  </span>
 );
 
+/* Quick‑link tile (fully coloured) */
 const Tile = ({ bg = "bg-gray-300", icon: Icon, label }) => (
   <a
     href="#"
@@ -44,11 +53,29 @@ const Tile = ({ bg = "bg-gray-300", icon: Icon, label }) => (
   </a>
 );
 
+/* White card with coloured icon chip (Tools & Resources) */
+const FeatureCard = ({ color = "bg-gray-300", icon: Icon, label }) => (
+  <a
+    href="#"
+    className="flex flex-col items-start gap-4 rounded-xl border bg-white p-5 shadow-sm transition hover:shadow-md"
+  >
+    <span className={`${color} inline-flex rounded-lg p-3 text-white`}>
+      <Icon size={24} />
+    </span>
+    <span className="text-sm font-medium leading-tight text-gray-900">
+      {label}
+    </span>
+  </a>
+);
+
 const NewsItem = ({ title, date }) => (
   <li className="flex items-start gap-3">
     <ScrollText size={18} className="mt-0.5 text-primary" />
     <div>
-      <a href="#" className="block text-sm font-medium leading-snug hover:underline">
+      <a
+        href="#"
+        className="block text-sm font-medium leading-snug hover:underline"
+      >
         {title}
       </a>
       <time className="text-xs text-gray-500">{date}</time>
@@ -65,6 +92,7 @@ const PrimaryButton = ({ text }) => (
 /* -------------------------------------------------------------------------- */
 /*  MAIN COMPONENT                                                            */
 /* -------------------------------------------------------------------------- */
+
 export default function PublicProcurementPage() {
   const [open, setOpen] = useState(false);
 
@@ -87,17 +115,17 @@ export default function PublicProcurementPage() {
   ];
 
   const tools = [
-    { bg: "bg-emerald-600", icon: Briefcase, label: "Business Disclosures" },
-    { bg: "bg-blue-600", icon: ListChecks, label: "Real‑time Coverage" },
-    { bg: "bg-red-600", icon: Megaphone, label: "e‑GP System" },
-    { bg: "bg-amber-800", icon: BookOpen, label: "Procurement Guides" },
+    { color: "bg-emerald-600", icon: Briefcase, label: "Business Disclosures" },
+    { color: "bg-blue-600", icon: ListChecks, label: "Real‑time Coverage" },
+    { color: "bg-red-600", icon: Megaphone, label: "e‑GP System" },
+    { color: "bg-amber-800", icon: BookOpen, label: "Procurement Guides" },
   ];
 
   const resources = [
-    { bg: "bg-yellow-500", icon: CalendarClock, label: "Training Schedules" },
-    { bg: "bg-rose-600", icon: HelpCircle, label: "FAQs" },
-    { bg: "bg-blue-600", icon: Send, label: "Newsletter Sign‑Up" },
-    { bg: "bg-gray-800", icon: Users, label: "Whistleblower Portal" },
+    { color: "bg-yellow-500", icon: CalendarClock, label: "Training Schedules" },
+    { color: "bg-rose-600", icon: HelpCircle, label: "FAQs" },
+    { color: "bg-blue-600", icon: Send, label: "Newsletter Sign‑Up" },
+    { color: "bg-gray-800", icon: Users, label: "Whistleblower Portal" },
   ];
 
   const news = [
@@ -115,16 +143,29 @@ export default function PublicProcurementPage() {
         <div className="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between gap-4 px-4 py-2">
           <div className="flex flex-wrap items-center gap-6">
             <span className="flex items-center gap-1">
-              <IconWrap><Mail size={14} /></IconWrap> info@example.go.ke
+              <IconWrap>
+                <Mail size={14} />
+              </IconWrap>
+              info@example.go.ke
             </span>
             <span className="flex items-center gap-1">
-              <IconWrap><Phone size={14} /></IconWrap> +254‑020‑328400
+              <IconWrap>
+                <Phone size={14} />
+              </IconWrap>
+              +254‑020‑328400
             </span>
             <span>ISO 9001 : 2015 Certified</span>
           </div>
           <div className="flex items-center gap-3 text-gray-600">
             {[Facebook, Twitter, Linkedin, Youtube].map((I, i) => (
-              <a key={i} href="#" aria-label={I.name} className="hover:text-primary"><I size={16} /></a>
+              <a
+                key={i}
+                href="#"
+                aria-label={I.name}
+                className="hover:text-primary"
+              >
+                <I size={16} />
+              </a>
             ))}
           </div>
         </div>
@@ -135,44 +176,87 @@ export default function PublicProcurementPage() {
         <div className="mx-auto flex max-w-screen-xl items-center justify-between px-4 py-4">
           <a href="#" className="flex items-center gap-3">
             <img src="/src/assets/images/logo.jpeg" alt="PPRA logo" className="h-20 w-auto" />
-            {/* <span className="hidden text-lg font-bold sm:block">Public Procurement</span> */}
+            
           </a>
-          <nav aria-label="Main" className="hidden items-center gap-6 text-sm font-medium md:flex">
+          <nav
+            aria-label="Main"
+            className="hidden items-center gap-6 text-sm font-medium md:flex"
+          >
             {navLinks.map((link) => (
-              <a key={link} href="#" className="hover:text-primary">{link}</a>
+              <a key={link} href="#" className="hover:text-primary">
+                {link}
+              </a>
             ))}
-            <a href="#" aria-label="Search" className="text-gray-600 hover:text-primary"><Search size={18} /></a>
+            <a
+              href="#"
+              aria-label="Search"
+              className="text-gray-600 hover:text-primary"
+            >
+              <Search size={18} />
+            </a>
           </nav>
-          <button aria-label="Toggle navigation" className="md:hidden" onClick={() => setOpen(!open)}>
+          <button
+            aria-label="Toggle navigation"
+            className="md:hidden"
+            onClick={() => setOpen(!open)}
+          >
             <Menu size={24} />
           </button>
         </div>
         {open && (
           <nav className="md:hidden divide-y divide-gray-100 bg-white text-sm font-medium shadow">
             {navLinks.map((link) => (
-              <a key={link} href="#" className="block px-4 py-3 hover:bg-gray-50">{link}</a>
+              <a
+                key={link}
+                href="#"
+                className="block px-4 py-3 hover:bg-gray-50"
+              >
+                {link}
+              </a>
             ))}
           </nav>
         )}
       </header>
 
-      {/* HERO */}
-      <section className="grid  grid-cols-1 md:grid-cols-2">
-        <div className="relative order-2 md:order-1">
-          <img src="/src/assets/images/procure.jpg" alt="Monitoring" className="h-full w-auto object-cover" />
-          <div className="absolute inset-0 flex items-center bg-black/40 px-6 md:px-12">
-            <h2 className="text-3xl font-bold leading-tight text-white md:text-4xl">
-              Monitor & Report<br />Procurement Irregularities
-            </h2>
-          </div>
+      {/* HERO – rounded container with angled divider */}
+      <section className="relative mx-4 my-6 overflow-hidden rounded-xl shadow-lg md:mx-8">
+        {/* angled divider */}
+        <div className="pointer-events-none absolute inset-0 hidden md:block">
+          <div className="absolute left-1/2 top-0 h-full w-1 origin-top rotate-6 bg-white" />
         </div>
-        <div className="relative order-1 flex items-center md:order-2">
-          <img src="/src/assets/images/ppra.jpg" alt="City skyline" className="h-full auto object-cover" />
-          <div className="absolute inset-0 flex flex-col justify-center gap-5 bg-black/50 px-6 md:px-12">
-            <h1 className="text-3xl font-bold leading-tight text-white md:text-5xl">
-              Your Gateway to<br />Transparent Public Procurement
-            </h1>
-            <PrimaryButton text="Explore PPIP" />
+
+        <div className="grid h-[460px] grid-cols-1 md:grid-cols-2">
+          {/* Right pane (shows first on small) */}
+          <div className="relative order-2 md:order-1">
+            <img
+              src="/src/assets/images/procure.jpg"
+              alt="Monitoring"
+              className="h-full w-full object-cover"
+            />
+            <div className="absolute inset-0 flex items-center bg-black/40 px-6 md:px-12">
+              <h2 className="text-3xl font-bold leading-tight text-white md:text-4xl">
+                Monitor & Report
+                <br />
+                Procurement Irregularities
+              </h2>
+            </div>
+          </div>
+
+          {/* Left pane */}
+          <div className="relative order-1 flex items-center md:order-2">
+            <img
+              src="/src/assets/images/ppra.jpg"
+              alt="City skyline"
+              className="h-full w-full object-cover"
+            />
+            <div className="absolute inset-0 flex flex-col justify-center gap-5 bg-black/50 px-6 md:px-12">
+              <h1 className="text-3xl font-bold leading-tight text-white md:text-5xl">
+                Your Gateway to
+                <br />
+                Transparent Public Procurement
+              </h1>
+              <PrimaryButton text="Explore PPIP" />
+            </div>
           </div>
         </div>
       </section>
@@ -180,7 +264,9 @@ export default function PublicProcurementPage() {
       {/* QUICK LINKS */}
       <section className="bg-white py-10 shadow-inner">
         <div className="mx-auto flex max-w-screen-xl gap-4 overflow-x-auto px-4 md:grid md:grid-cols-5 md:overflow-visible">
-          {quickLinks.map((t) => <Tile key={t.label} {...t} />)}
+          {quickLinks.map((t) => (
+            <Tile key={t.label} {...t} />
+          ))}
         </div>
       </section>
 
@@ -189,8 +275,11 @@ export default function PublicProcurementPage() {
         <div className="mx-auto flex max-w-screen-xl items-center gap-2 px-4 py-3 text-sm">
           <span className="inline-block h-2 w-2 rounded-full bg-primary" />
           <p>
-            <strong>PPIP Notice:</strong> Entities must upload contracts by <time>01 Jul 2025</time>.
-            <a href="#" className="ml-2 underline">View Circular</a>
+            <strong>PPIP Notice:</strong> Entities must upload contracts by{" "}
+            <time>01 Jul 2025</time>.
+            <a href="#" className="ml-2 underline">
+              View Circular
+            </a>
           </p>
         </div>
       </div>
@@ -201,22 +290,31 @@ export default function PublicProcurementPage() {
           <h2 className="mb-6 text-2xl font-bold md:text-3xl">About PPRA</h2>
           <h3 className="mb-2 text-lg font-semibold">Who We Are</h3>
           <p className="text-sm leading-relaxed">
-            The Public Procurement Regulatory Authority (PPRA) ensures transparency, accountability
-            and value for money across all government purchasing.
+            The Public Procurement Regulatory Authority (PPRA) ensures
+            transparency, accountability and value for money across all
+            government purchasing.
           </p>
           <h3 className="mt-6 mb-2 text-lg font-semibold">Vision & Mission</h3>
           <p className="text-sm leading-relaxed">
-            We envision a fair, efficient procurement ecosystem that drives sustainable national
-            development.
+            We envision a fair, efficient procurement ecosystem that drives
+            sustainable national development.
           </p>
-          <a href="#" className="mt-4 inline-flex items-center text-primary hover:underline">
+          <a
+            href="#"
+            className="mt-4 inline-flex items-center text-primary hover:underline"
+          >
             Core Values <ChevronRight size={14} className="ml-1" />
           </a>
         </div>
+
         <div>
-          <h2 className="mb-6 text-2xl font-bold md:text-3xl">News & Announcements</h2>
+          <h2 className="mb-6 text-2xl font-bold md:text-3xl">
+            News & Announcements
+          </h2>
           <ul className="space-y-5">
-            {news.map((n) => <NewsItem key={n.title} {...n} />)}
+            {news.map((n) => (
+              <NewsItem key={n.title} {...n} />
+            ))}
           </ul>
         </div>
       </section>
@@ -225,15 +323,23 @@ export default function PublicProcurementPage() {
       <section className="bg-gray-50 py-16">
         <div className="mx-auto grid max-w-screen-xl gap-12 px-4 md:grid-cols-2">
           <div>
-            <h2 className="mb-6 text-2xl font-bold md:text-3xl">Tools in Action</h2>
-            <div className="grid grid-cols-2 gap-4 md:grid-cols-2 lg:grid-cols-2">
-              {tools.map((t) => <Tile key={t.label} {...t} />)}
+            <h2 className="mb-6 text-2xl font-bold md:text-3xl">
+              Tools in Action
+            </h2>
+            <div className="grid grid-cols-2 gap-4">
+              {tools.map((t) => (
+                <FeatureCard key={t.label} {...t} />
+              ))}
             </div>
           </div>
           <div>
-            <h2 className="mb-6 text-2xl font-bold md:text-3xl">Stakeholder Resources</h2>
-            <div className="grid grid-cols-2 gap-4 md:grid-cols-2 lg:grid-cols-2">
-              {resources.map((r) => <Tile key={r.label} {...r} />)}
+            <h2 className="mb-6 text-2xl font-bold md:text-3xl">
+              Stakeholder Resources
+            </h2>
+            <div className="grid grid-cols-2 gap-4">
+              {resources.map((r) => (
+                <FeatureCard key={r.label} {...r} />
+              ))}
             </div>
           </div>
         </div>
@@ -245,26 +351,54 @@ export default function PublicProcurementPage() {
           <div>
             <img src="/logo.png" alt="PPRA logo" className="h-10" />
             <address className="mt-4 not-italic text-sm leading-relaxed">
-              PPRA Main Office<br />PO Box 53028, Nairobi, Kenya<br />+254 20 328400
+              PPRA Main Office
+              <br />
+              PO Box 53028, Nairobi, Kenya
+              <br />
+              +254 20 328400
             </address>
-            <a href="#" className="mt-4 inline-flex items-center text-primary hover:underline">
+            <a
+              href="#"
+              className="mt-4 inline-flex items-center text-primary hover:underline"
+            >
               Regional Offices <ChevronRight size={14} className="ml-1" />
             </a>
           </div>
+
           <div className="grid grid-cols-2 gap-8 text-sm">
             <div>
               <h3 className="mb-4 text-lg font-semibold">Quick Links</h3>
               <ul className="space-y-2">
-                <li><a href="#" className="hover:underline">Tenders</a></li>
-                <li><a href="#" className="hover:underline">FAQs</a></li>
-                <li><a href="#" className="hover:underline">Newsletter Sign‑Up</a></li>
+                <li>
+                  <a href="#" className="hover:underline">
+                    Tenders
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:underline">
+                    FAQs
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:underline">
+                    Newsletter Sign‑Up
+                  </a>
+                </li>
               </ul>
             </div>
             <div>
               <h3 className="mb-4 text-lg font-semibold">Legal</h3>
               <ul className="space-y-2">
-                <li><a href="#" className="hover:underline">Privacy Policy</a></li>
-                <li><a href="#" className="hover:underline">Website Feedback</a></li>
+                <li>
+                  <a href="#" className="hover:underline">
+                    Privacy Policy
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:underline">
+                    Website Feedback
+                  </a>
+                </li>
               </ul>
             </div>
           </div>
@@ -274,4 +408,15 @@ export default function PublicProcurementPage() {
   );
 }
 
-
+/* -------------------------------------------------------------------------- */
+/*  TAILWIND CONFIG EXTENSION                                                 */
+/* -------------------------------------------------------------------------- */
+// In tailwind.config.js add (or adjust) your brand primary colour:
+//
+// theme: {
+//   extend: {
+//     colors: {
+//       primary: "#0057b8", // adjust to match brand
+//     },
+//   },
+// },

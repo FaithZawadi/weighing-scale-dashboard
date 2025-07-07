@@ -1,10 +1,3 @@
-// PublicProcurementPage.jsx
-// — final polished version (React + Tailwind v4)
-// — every imported icon is used
-// — hero card is rounded with angled divider
-// — “Tools in Action” & “Stakeholder Resources” cards are white with coloured icon chips
-// — quick‑link tiles are fully coloured
-
 import React, { useState } from "react";
 import {
   Phone,
@@ -84,7 +77,7 @@ const NewsItem = ({ title, date }) => (
 );
 
 const PrimaryButton = ({ text }) => (
-  <button className="rounded-md bg-primary px-6 py-3 text-sm font-semibold text-white shadow-md transition hover:bg-primary/90">
+  <button className="rounded-md bg-blue-500 bg-primary px-6 py-3 text-sm font-semibold text-white shadow-md transition hover:bg-primary/90">
     {text}
   </button>
 );
@@ -175,7 +168,7 @@ export default function PublicProcurementPage() {
       <header className="sticky top-0 z-20 bg-white/95 shadow-sm backdrop-blur">
         <div className="mx-auto flex max-w-screen-xl items-center justify-between px-4 py-4">
           <a href="#" className="flex items-center gap-3">
-            <img src="/src/assets/images/logo.jpeg" alt="PPRA logo" className="h-20 w-auto" />
+            <img src="/public/logo.jpeg" alt="PPRA logo" className="h-20 w-auto" />
             
           </a>
           <nav
@@ -229,7 +222,7 @@ export default function PublicProcurementPage() {
           {/* Right pane (shows first on small) */}
           <div className="relative order-2 md:order-1">
             <img
-              src="/src/assets/images/procure.jpg"
+              src="/public/procure.jpg"
               alt="Monitoring"
               className="h-full w-full object-cover"
             />
@@ -245,7 +238,7 @@ export default function PublicProcurementPage() {
           {/* Left pane */}
           <div className="relative order-1 flex items-center md:order-2">
             <img
-              src="/src/assets/images/ppra.jpg"
+              src="/public/ppra.jpg"
               alt="City skyline"
               className="h-full w-full object-cover"
             />
@@ -253,9 +246,9 @@ export default function PublicProcurementPage() {
               <h1 className="text-3xl font-bold leading-tight text-white md:text-5xl">
                 Your Gateway to
                 <br />
-                Transparent Public Procurement
+                Transparent Public Procurement
               </h1>
-              <PrimaryButton text="Explore PPIP" />
+              <PrimaryButton text="Explore PPRA" />
             </div>
           </div>
         </div>
@@ -276,8 +269,8 @@ export default function PublicProcurementPage() {
           <span className="inline-block h-2 w-2 rounded-full bg-primary" />
           <p>
             <strong>PPIP Notice:</strong> Entities must upload contracts by{" "}
-            <time>01 Jul 2025</time>.
-            <a href="#" className="ml-2 underline">
+            <time>01,Jul,2025</time>.
+            <a href="#" className="ml-2 underline text-blue-600">
               View Circular
             </a>
           </p>
@@ -349,13 +342,13 @@ export default function PublicProcurementPage() {
       <footer className="border-t bg-white pt-14">
         <div className="mx-auto grid max-w-screen-xl gap-12 px-4 pb-16 md:grid-cols-2">
           <div>
-            <img src="/logo.png" alt="PPRA logo" className="h-10" />
+            <img src="/public/logo.jpeg" alt="PPRA logo" className="h-10" />
             <address className="mt-4 not-italic text-sm leading-relaxed">
               PPRA Main Office
               <br />
               PO Box 53028, Nairobi, Kenya
               <br />
-              +254 20 328400
+              +25420328400
             </address>
             <a
               href="#"

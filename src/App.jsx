@@ -96,7 +96,7 @@ export default function PublicProcurementPage() {
   const quickLinks = [
     { bg: "bg-emerald-600", icon: LayoutGrid, label: "PPRA Portal" },
     { bg: "bg-blue-600", icon: ShieldAlert, label: "Complaints Management" },
-    { bg: "bg-red-600", icon: Megaphone, label: "a‑GP System" },
+    { bg: "bg-red-600", icon: Megaphone, label: "e‑GP System" },
     { bg: "bg-yellow-500", icon: FileText, label: "Debarment List" },
     { bg: "bg-amber-800", icon: BookOpen, label: "Procurement Guidelines" },
   ];

@@ -22,6 +22,9 @@ import {
   CalendarClock,
   Megaphone,
 } from "lucide-react";
+import logo from "E:/procure/public/logo.jpeg";
+import heroClipboard from "E:/procure/public/ppra.jpg";
+import heroCity from "E:/procure/public/procure.jpg";
 
 /* -------------------------------------------------------------------------- */
 /*  SMALL UTILITY COMPONENTS                                                  */
@@ -168,7 +171,7 @@ export default function PublicProcurementPage() {
       <header className="sticky top-0 z-20 bg-white/95 shadow-sm backdrop-blur">
         <div className="mx-auto flex max-w-screen-xl items-center justify-between px-4 py-4">
           <a href="#" className="flex items-center gap-3">
-            <img src="/public/logo.jpeg" alt="PPRA logo" className="h-20 w-auto" />
+            <img src={logo} alt="PPRA logo" className="h-20 w-auto" />
             
           </a>
           <nav
@@ -222,7 +225,7 @@ export default function PublicProcurementPage() {
           {/* Right pane (shows first on small) */}
           <div className="relative order-2 md:order-1">
             <img
-              src="/public/procure.jpg"
+              src={heroClipboard}
               alt="Monitoring"
               className="h-full w-full object-cover"
             />
@@ -238,7 +241,7 @@ export default function PublicProcurementPage() {
           {/* Left pane */}
           <div className="relative order-1 flex items-center md:order-2">
             <img
-              src="/public/ppra.jpg"
+              src={heroCity}
               alt="City skyline"
               className="h-full w-full object-cover"
             />
